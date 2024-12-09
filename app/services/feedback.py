@@ -14,7 +14,7 @@ logger, _ = setup_logging()
 
 async def feedback_service(journal: JournalSchema):
     project_id = os.getenv("VERTEX_PROJECT_ID")
-    model_location = os.getenv("MODEL_LOCATION")
+    model_location = os.getenv("GEN_MODEL_LOCATION")
     model_id = os.getenv("GEN_MODEL_ID")
     logger.debug(
         f"project_id = {project_id}, model_location = {model_location}, model_id = {model_id}"

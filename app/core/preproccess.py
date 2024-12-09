@@ -1,6 +1,6 @@
-import pickle
 import numpy as np
 import re
+import joblib
 
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
@@ -11,7 +11,7 @@ logger, _ = setup_logging()
 
 
 with open("word_to_index.pkl", "rb") as f:
-    word_to_index = pickle.load(f)
+    word_to_index = joblib.load(f)
 
 
 def clean_text(text):

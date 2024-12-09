@@ -127,3 +127,19 @@ asyncio.exceptions.CancelledError
     await getter
 asyncio.exceptions.CancelledError
 
+[31mERROR[0m:    2024-12-10 00:35:44 | Failed to predict: 'NoneType' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "/home/indianajones/Documents/bangkit/tes-workflow/workflow-test/app/services/predict.py", line 51, in predict_service
+    return await feedback_service(journal)
+  File "/home/indianajones/Documents/bangkit/tes-workflow/workflow-test/app/services/feedback.py", line 22, in feedback_service
+    if not project_id.strip() or not model_location.strip() or not model_id.strip():
+AttributeError: 'NoneType' object has no attribute 'strip'
+[31mERROR[0m:    2024-12-10 00:38:02 | Traceback (most recent call last):
+  File "/home/indianajones/.local/lib/python3.10/site-packages/starlette/routing.py", line 700, in lifespan
+    await receive()
+  File "/usr/lib/python3/dist-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/lib/python3.10/asyncio/queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+

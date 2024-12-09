@@ -202,3 +202,123 @@ asyncio.exceptions.CancelledError
 asyncio.exceptions.CancelledError
 
 [32mINFO[0m:     2024-12-09 19:14:24 | Stopping reloader process [[36m[1m121949[0m]
+[32mINFO[0m:     2024-12-10 00:35:02 | Will watch for changes in these directories: ['/home/indianajones/Documents/bangkit/tes-workflow/workflow-test']
+[32mINFO[0m:     2024-12-10 00:35:02 | Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-12-10 00:35:02 | Started reloader process [[36m[1m346974[0m] using [36m[1mwatchgod[0m
+[33mWARNING[0m:  2024-12-10 00:35:09 | WatchGodReload detected file change in '['/home/indianajones/Documents/bangkit/tes-workflow/workflow-test/app/core/preproccess.py']'. Reloading...
+[32mINFO[0m:     2024-12-10 00:35:14 | Started server process [[36m347256[0m]
+[32mINFO[0m:     2024-12-10 00:35:14 | Waiting for application startup.
+[32mINFO[0m:     2024-12-10 00:35:14 | Load Model
+[36mDEBUG[0m:    2024-12-10 00:35:14 | Load model from memotions.keras...
+[32mINFO[0m:     2024-12-10 00:35:18 | Model stored in app staasdaste
+[32mINFO[0m:     2024-12-10 00:35:18 | Application startup complete.
+[32mINFO[0m:     2024-12-10 00:35:42 | Starting prediction process for journal
+[36mDEBUG[0m:    2024-12-10 00:35:42 | Input Text : saya senang dan juga sedih saat ini
+[36mDEBUG[0m:    2024-12-10 00:35:42 | Clean Text : senang sedih
+[36mDEBUG[0m:    2024-12-10 00:35:42 | Tokenize Text : ['senang', 'sedih']
+[36mDEBUG[0m:    2024-12-10 00:35:42 | Stemming : ['senang', 'sedih']
+[36mDEBUG[0m:    2024-12-10 00:35:42 | indices : [43887, 5438]
+[36mDEBUG[0m:    2024-12-10 00:35:42 | Padding Text : [43887  5438     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0]
+[36mDEBUG[0m:    2024-12-10 00:35:44 | Predictions_raw: [[0.7320067  0.2417716  0.0105752  0.00252128 0.01312525]]
+[36mDEBUG[0m:    2024-12-10 00:35:44 | Predictions: [[0.732 0.242 0.011 0.003 0.013]]
+[36mDEBUG[0m:    2024-12-10 00:35:44 | [EmotionItem(emotion=<Emotion.SAD: 'SAD'>, confidence=0.732), EmotionItem(emotion=<Emotion.HAPPY: 'HAPPY'>, confidence=0.242)]
+[36mDEBUG[0m:    2024-12-10 00:35:44 | project_id = 635053273661, model_location = None, model_id = 4447396991005097984
+[31mERROR[0m:    2024-12-10 00:35:44 | Failed to predict: 'NoneType' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "/home/indianajones/Documents/bangkit/tes-workflow/workflow-test/app/services/predict.py", line 51, in predict_service
+    return await feedback_service(journal)
+  File "/home/indianajones/Documents/bangkit/tes-workflow/workflow-test/app/services/feedback.py", line 22, in feedback_service
+    if not project_id.strip() or not model_location.strip() or not model_id.strip():
+AttributeError: 'NoneType' object has no attribute 'strip'
+[33mWARNING[0m:  2024-12-10 00:37:01 | WatchGodReload detected file change in '['/home/indianajones/Documents/bangkit/tes-workflow/workflow-test/app/services/feedback.py']'. Reloading...
+[32mINFO[0m:     2024-12-10 00:37:01 | Shutting down
+[32mINFO[0m:     2024-12-10 00:37:01 | Waiting for application shutdown.
+[32mINFO[0m:     2024-12-10 00:37:02 | Application shutdown complete.
+[32mINFO[0m:     2024-12-10 00:37:02 | Finished server process [[36m347256[0m]
+[32mINFO[0m:     2024-12-10 00:37:09 | Started server process [[36m348530[0m]
+[32mINFO[0m:     2024-12-10 00:37:09 | Waiting for application startup.
+[32mINFO[0m:     2024-12-10 00:37:09 | Load Model
+[36mDEBUG[0m:    2024-12-10 00:37:09 | Load model from memotions.keras...
+[32mINFO[0m:     2024-12-10 00:37:10 | Model stored in app staasdaste
+[32mINFO[0m:     2024-12-10 00:37:10 | Application startup complete.
+[32mINFO[0m:     2024-12-10 00:37:15 | Starting prediction process for journal
+[36mDEBUG[0m:    2024-12-10 00:37:15 | Input Text : saya senang dan juga sedih saat ini
+[36mDEBUG[0m:    2024-12-10 00:37:15 | Clean Text : senang sedih
+[36mDEBUG[0m:    2024-12-10 00:37:15 | Tokenize Text : ['senang', 'sedih']
+[36mDEBUG[0m:    2024-12-10 00:37:15 | Stemming : ['senang', 'sedih']
+[36mDEBUG[0m:    2024-12-10 00:37:15 | indices : [43887, 5438]
+[36mDEBUG[0m:    2024-12-10 00:37:15 | Padding Text : [43887  5438     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0]
+[36mDEBUG[0m:    2024-12-10 00:37:16 | Predictions_raw: [[0.7320067  0.2417716  0.0105752  0.00252128 0.01312525]]
+[36mDEBUG[0m:    2024-12-10 00:37:16 | Predictions: [[0.732 0.242 0.011 0.003 0.013]]
+[36mDEBUG[0m:    2024-12-10 00:37:16 | [EmotionItem(emotion=<Emotion.SAD: 'SAD'>, confidence=0.732), EmotionItem(emotion=<Emotion.HAPPY: 'HAPPY'>, confidence=0.242)]
+[36mDEBUG[0m:    2024-12-10 00:37:16 | project_id = 635053273661, model_location = asia-southeast1, model_id = 4447396991005097984
+[36mDEBUG[0m:    2024-12-10 00:37:16 | Input data : saya senang dan juga sedih saat ini. Ini adalah mood SAD, HAPPY
+[32mINFO[0m:     2024-12-10 00:37:16 | Generate feedback on journal
+[36mDEBUG[0m:    2024-12-10 00:37:20 | Making request: POST https://oauth2.googleapis.com/token
+[36mDEBUG[0m:    2024-12-10 00:37:20 | Starting new HTTPS connection (1): oauth2.googleapis.com:443
+[36mDEBUG[0m:    2024-12-10 00:37:24 | https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[36mDEBUG[0m:    2024-12-10 00:37:28 | raw response : candidates {
+  content {
+    role: "model"
+    parts {
+      text: "Merasakan kebahagiaan dan kesedihan secara bersamaan menunjukkan kerentanan dan keseimbangan emosi yang unik. Biarkan air mata bahagia dan duka mengalir bersama, melukis langit hatimu dengan warna pelangi senja yang lembut. Seiring waktu, warna-warna tersebut akan menyatu menciptakan spektrum baru, lebih indah dan personal, mencerminkan dirimu yang utuh dan kuat. Nikmati tarian emosi ini, belajar darinya, dan jangan takut untuk menunjukkannya kepada dunia. Kamu diizinkan untuk merasa bahagia dan sedih, dan di situlah letak keindahan hidup."
+    }
+  }
+  avg_logprobs: -1.1456921895345051
+  finish_reason: STOP
+  safety_ratings {
+    category: HARM_CATEGORY_HATE_SPEECH
+    probability: NEGLIGIBLE
+    probability_score: 0.0495605469
+    severity: HARM_SEVERITY_NEGLIGIBLE
+    severity_score: 0.0240478516
+  }
+  safety_ratings {
+    category: HARM_CATEGORY_DANGEROUS_CONTENT
+    probability: NEGLIGIBLE
+    probability_score: 0.0913085938
+    severity: HARM_SEVERITY_NEGLIGIBLE
+    severity_score: 0.0341796875
+  }
+  safety_ratings {
+    category: HARM_CATEGORY_HARASSMENT
+    probability: NEGLIGIBLE
+    probability_score: 0.0541992188
+    severity: HARM_SEVERITY_NEGLIGIBLE
+    severity_score: 0.0385742188
+  }
+  safety_ratings {
+    category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+    probability: NEGLIGIBLE
+    probability_score: 0.12109375
+    severity: HARM_SEVERITY_NEGLIGIBLE
+    severity_score: 0.0583496094
+  }
+}
+usage_metadata {
+  prompt_token_count: 38
+  candidates_token_count: 120
+  total_token_count: 158
+}
+
+[36mDEBUG[0m:    2024-12-10 00:37:28 | Generated Feedback: Merasakan kebahagiaan dan kesedihan secara bersamaan menunjukkan kerentanan dan keseimbangan emosi yang unik. Biarkan air mata bahagia dan duka mengalir bersama, melukis langit hatimu dengan warna pelangi senja yang lembut. Seiring waktu, warna-warna tersebut akan menyatu menciptakan spektrum baru, lebih indah dan personal, mencerminkan dirimu yang utuh dan kuat. Nikmati tarian emosi ini, belajar darinya, dan jangan takut untuk menunjukkannya kepada dunia. Kamu diizinkan untuk merasa bahagia dan sedih, dan di situlah letak keindahan hidup.
+[32mINFO[0m:     2024-12-10 00:38:02 | Shutting down
+[32mINFO[0m:     2024-12-10 00:38:02 | Finished server process [[36m348530[0m]
+[31mERROR[0m:    2024-12-10 00:38:02 | Traceback (most recent call last):
+  File "/home/indianajones/.local/lib/python3.10/site-packages/starlette/routing.py", line 700, in lifespan
+    await receive()
+  File "/usr/lib/python3/dist-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/lib/python3.10/asyncio/queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[32mINFO[0m:     2024-12-10 00:38:03 | Stopping reloader process [[36m[1m346974[0m]
