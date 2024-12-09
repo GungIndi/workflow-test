@@ -55,22 +55,18 @@ jobs:
         id: deploy
         run: |
           gcloud run deploy ${{ vars.SERVICE_NAME }} \
-            --image=${{ vars.REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.ARTIFACT_REPO }}/${{ vars.SERVICE_NAME }}:${{ inputs.ref }} \
-            --region=${{ vars.REGION }} \
-            --project=${{ vars.GCP_PROJECT_ID }} \
-            --memory=1Gi \
-            --cpu=2 \
-            --min-instances=1 \
-            --max-instances=2 \
-            --port=8000 \
-            --set-env-vars=PREDICT_MODEL_URL=${{ vars.PREDICT_MODEL_URL }},\
-              TOPIC_ID=${{ secrets.TOPIC_ID }},\
-              ENVIRONMENT=${{ vars.ENVIRONMENT }},\
-              VERTEX_PROJECT_ID=${{ secrets.VERTEX_PROJECT_ID }},\
-              GEN_MODEL_LOCATION=${{ secrets.GEN_MODEL_LOCATION }},\
-              GEN_MODEL_ID=${{ secrets.GEN_MODEL_ID }}
-
-
-
-
-
+          --image=${{ vars.REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.ARTIFACT_REPO }}/${{ vars.SERVICE_NAME }}:${{ inputs.ref }} \
+          --cpu=2 \
+          --memory=1Gi \
+          --min-instances=1 \
+          --max-instances=2 \
+          --set-env-vars=ENVIRONMENT=production \
+          --set-env-vars=PREDICT_MODEL_URL=${{ vars.PREDICT_MODEL_URL }} \
+          --set-env-vars=PROJECT_ID=${{ vars.GCP_PROJECT_ID }} \
+          --set-env-vars=TOPIC_ID=${{ secrets.TOPIC_ID }} \
+          --set-env-vars=VERTEX_PROJECT_ID=${{ secrets.VERTEX_PROJECT_ID }} \
+          --set-env-vars=GEN_MODEL_LOCATION=${{ secrets.GEN_MODEL_LOCATION }}
+          --set-env-vars=GEN_MODEL_ID=${{ secrets.GEN_MODEL_ID }} \
+          --region=${{ vars.REGION }} \
+          --project=${{ vars.GCP_PROJECT_ID }} \
+          && gcloud run services update-traffic workflow-testing --to-latest
