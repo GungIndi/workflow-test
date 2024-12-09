@@ -11,6 +11,23 @@ on:
         description: The tag or SHA to checkout.
 
 jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+      
+      - name: Install Black
+        run: pip install black
+      
+      - name: Run Black Formatter
+        run: black --check .
+        
   deploy-staging:
     runs-on: ubuntu-latest
     steps:
