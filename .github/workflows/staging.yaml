@@ -52,22 +52,27 @@ jobs:
           tags: |
             ${{ vars.REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.ARTIFACT_REPO }}/${{ vars.SERVICE_NAME }}:${{ inputs.ref }}
 
-      - name: Deploy to Cloud Run
-        id: deploy
-        run: |
-          gcloud run deploy ${{ vars.SERVICE_NAME }} \
-            --image ${{ vars.REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.ARTIFACT_REPO }}/${{ vars.SERVICE_NAME }}:${{ inputs.ref }} \
-            --region ${{ vars.REGION }} \
-            --project ${{ vars.GCP_PROJECT_ID }} \ 
-            --memory 1Gi \
-            --cpu 2 \
-            --min-instances 1 \
-            --max-instances 2 \
-            --set-env-vars \
-              PREDICT_MODEL_URL=${{ vars.PREDICT_MODEL_URL }},\
-              TOPIC_ID=${{ secrets.TOPIC_ID }},\
-              VERTEX_PROJECT_ID=${{ secrets.VERTEX_PROJECT_ID }},\
-              GEN_MODEL_LOCATION=${{ secrets.GEN_MODEL_LOCATION }},\
-              GEN_MODEL_ID=${{ secrets.GEN_MODEL_ID }}
+            - name: Deploy to Cloud Run
+          id: deploy
+          run: |
+            gcloud run deploy ${{ vars.SERVICE_NAME }} \
+              --image=${{ vars.REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.ARTIFACT_REPO }}/${{ vars.SERVICE_NAME }}:${{ inputs.ref }} \
+              --region=${{ vars.REGION }} \
+              --memory=1Gi \
+              --cpu=2 \
+              --min-instances=1 \
+              --max-instances=2 \
+              --port=8000 \
+              --[no-]use-http2 \
+              --set-env-vars=PREDICT_MODEL_URL=${{ vars.PREDICT_MODEL_URL }},\
+                PROJECT_ID=${{ vars.GCP_PROJECT_ID }},\
+                TOPIC_ID=${{ secrets.TOPIC_ID }},\
+                ENVIRONMENT=${{ vars.ENVIRONMENT }},\
+                VERTEX_PROJECT_ID=${{ secrets.VERTEX_PROJECT_ID }},\
+                GEN_MODEL_LOCATION=${{ secrets.GEN_MODEL_LOCATION }},\
+                GEN_MODEL_ID=${{ secrets.GEN_MODEL_ID }}
+
+
+
 
 
