@@ -15,11 +15,11 @@ jobs:
     secrets: inherit
   prod: 
     if: ${{ github.ref == 'refs/heads/main' || github.base_ref == 'main' }}
-    uses: ./.github/workflows/production.yaml
+    uses: ./.github/workflows/staging.yaml
     permissions: 
       id-token: write
       contents: read
     with:
-      environment: production
+      environment: staging
       ref: ${{ github.sha }}
     secrets: inherit
