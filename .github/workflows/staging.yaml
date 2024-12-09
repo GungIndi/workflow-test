@@ -67,7 +67,7 @@ jobs:
   #         tags: |
   #           ${{ vars.REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.ARTIFACT_REPO }}/${{ vars.SERVICE_NAME }}:${{ inputs.ref }}
     
-  deploy-to-staging:
+  manual-approval:
     # needs: build-and-release
     runs-on: ubuntu-latest
     steps:
@@ -76,13 +76,16 @@ jobs:
       - name: Manual Approval
         uses: trstringer/manual-approval@v1
         with:
-          secret: ${{ github.token }}
+          secret: ${{ github.TOKEN }}
           approvers: "GungIndi"
           minimum-approvals: 1
           timeout-minutes: 30
           issue-title: "Approve Production Deployment"
           issue-body: "Please review and approve deployment to production"
 
+  deploy-to-staging:
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to Cloud Run
         id: deploy
         run: |
