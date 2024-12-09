@@ -28,11 +28,6 @@ jobs:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
           token_format: 'access_token'
 
-      - name: Echo secrets for debugging (masked values)
-        run: |
-          echo "WIF_PROVIDER: ${{ secrets.WIF_PROVIDER }}" # Will show a masked value, not the actual secret
-          echo "WIF_SERVICE_ACCOUNT: ${{ secrets.WIF_SERVICE_ACCOUNT }}" # Will show a masked value, not the actual secret
-
       - name: Docker Auth
         id: docker-auth
         uses: 'docker/login-action@v1'
@@ -63,5 +58,5 @@ jobs:
           --memory=1Gi \
           --min-instances=1 \
           --max-instances=2 \
-          --set-env-vars=ENVIRONMENT=production,PREDICT_MODEL_URL=${{ vars.PREDICT_MODEL_URL }},PROJECT_ID=${{ vars.GCP_PROJECT_ID }},TOPIC_ID=${{ secrets.TOPIC_ID }},VERTEX_PROJECT_ID=${{ vars.VERTEX_PROJECT_ID }},GEN_MODEL_LOCATION=${{ vars.GEN_MODEL_LOCATION }},GEN_MODEL_ID=${{ vars.GEN_MODEL_ID }} \
+          --set-env-vars=ENVIRONMENT=production,PREDICT_MODEL_URL=${{ vars.PREDICT_MODEL_URL }},PROJECT_ID=${{ vars.GCP_PROJECT_ID }},TOPIC_ID=${{ vars.TOPIC_ID }},VERTEX_PROJECT_ID=${{ vars.VERTEX_PROJECT_ID }},GEN_MODEL_LOCATION=${{ vars.GEN_MODEL_LOCATION }},GEN_MODEL_ID=${{ vars.GEN_MODEL_ID }} \
           && gcloud run services update-traffic ${{ vars.SERVICE_NAME }} --region=${{ vars.REGION }} --to-latest
