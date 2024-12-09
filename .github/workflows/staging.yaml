@@ -26,13 +26,13 @@ jobs:
         run: |
           pip install black
           black --check .
-          
+
       - name: Bandit Security Check
         run: |
           pip install bandit
           bandit -r .
 
-  deploy-staging:
+  build-and-release:
     runs-on: ubuntu-latest
     steps:
       - name: Echo secrets for debugging (masked values)
@@ -66,6 +66,19 @@ jobs:
           push: true 
           tags: |
             ${{ vars.REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.ARTIFACT_REPO }}/${{ vars.SERVICE_NAME }}:${{ inputs.ref }}
+    
+  deploy-to-staging:
+    needs: build-and-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Manual Approval
+        uses: trstringer/manual-approval@v1
+        with:
+          secret: ${{ github.token }}
+          approvers: gungindi
+          minimum-approvals: 1
+          issue-title: "Approve Production Deployment"
+          issue-body: "Please review and approve deployment to production"
 
       - name: Deploy to Cloud Run
         id: deploy
