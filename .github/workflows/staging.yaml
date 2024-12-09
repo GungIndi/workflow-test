@@ -63,5 +63,5 @@ jobs:
           --memory=1Gi \
           --min-instances=1 \
           --max-instances=2 \
-          --set-env-vars=ENVIRONMENT=production,PREDICT_MODEL_URL=${{ vars.PREDICT_MODEL_URL }},PROJECT_ID=${{ vars.GCP_PROJECT_ID }},TOPIC_ID=${{ secrets.TOPIC_ID }},VERTEX_PROJECT_ID=${{ secrets.VERTEX_PROJECT_ID }},GEN_MODEL_LOCATION=${{ secrets.GEN_MODEL_LOCATION }},GEN_MODEL_ID=${{ secrets.GEN_MODEL_ID }} \
+          --set-env-vars=ENVIRONMENT=production,PREDICT_MODEL_URL=${{ vars.PREDICT_MODEL_URL }},PROJECT_ID=${{ vars.GCP_PROJECT_ID }},TOPIC_ID=${{ vars.TOPIC_ID }},VERTEX_PROJECT_ID=${{ vars.VERTEX_PROJECT_ID }},GEN_MODEL_LOCATION=${{ vars.GEN_MODEL_LOCATION }},GEN_MODEL_ID=${{ vars.GEN_MODEL_ID }} \
           && gcloud run services update-traffic ${{ vars.SERVICE_NAME }} --to-latest
