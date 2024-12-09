@@ -1,0 +1,129 @@
+[31mERROR[0m:    2024-12-09 18:28:16 | Error loading model: No file or directory found at mood_classifier_bert.keras
+Traceback (most recent call last):
+  File "/home/indianajones/Documents/bangkit/tes-workflow/ml-service/app/core/models.py", line 14, in load_model
+    model = tf.keras.models.load_model(
+  File "/home/indianajones/.local/lib/python3.10/site-packages/tf_keras/src/saving/saving_api.py", line 262, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/home/indianajones/.local/lib/python3.10/site-packages/tf_keras/src/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/indianajones/.local/lib/python3.10/site-packages/tf_keras/src/saving/legacy/save.py", line 233, in load_model
+    raise IOError(
+OSError: No file or directory found at mood_classifier_bert.keras
+[31mERROR[0m:    2024-12-09 18:28:19 | Traceback (most recent call last):
+  File "/home/indianajones/.local/lib/python3.10/site-packages/starlette/routing.py", line 700, in lifespan
+    await receive()
+  File "/usr/lib/python3/dist-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/lib/python3.10/asyncio/queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[31mERROR[0m:    2024-12-09 18:29:38 | Error loading model: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+Traceback (most recent call last):
+  File "/home/indianajones/Documents/bangkit/tes-workflow/ml-service/app/core/models.py", line 12, in load_model
+    model = tf.keras.models.load_model(MODEL_URL)
+  File "/home/indianajones/.local/lib/python3.10/site-packages/keras/src/saving/saving_api.py", line 164, in load_model
+    is_keras_dir = file_utils.isdir(filepath) and file_utils.exists(
+  File "/home/indianajones/.local/lib/python3.10/site-packages/keras/src/utils/file_utils.py", line 471, in isdir
+    return os.path.isdir(path)
+  File "/usr/lib/python3.10/genericpath.py", line 42, in isdir
+    st = os.stat(s)
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+[31mERROR[0m:    2024-12-09 18:29:41 | Traceback (most recent call last):
+  File "/home/indianajones/.local/lib/python3.10/site-packages/starlette/routing.py", line 700, in lifespan
+    await receive()
+  File "/usr/lib/python3/dist-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/lib/python3.10/asyncio/queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[31mERROR[0m:    2024-12-09 18:29:54 | Error loading model: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+Traceback (most recent call last):
+  File "/home/indianajones/Documents/bangkit/tes-workflow/ml-service/app/core/models.py", line 12, in load_model
+    model = tf.keras.models.load_model(MODEL_URL)
+  File "/home/indianajones/.local/lib/python3.10/site-packages/keras/src/saving/saving_api.py", line 164, in load_model
+    is_keras_dir = file_utils.isdir(filepath) and file_utils.exists(
+  File "/home/indianajones/.local/lib/python3.10/site-packages/keras/src/utils/file_utils.py", line 471, in isdir
+    return os.path.isdir(path)
+  File "/usr/lib/python3.10/genericpath.py", line 42, in isdir
+    st = os.stat(s)
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+[31mERROR[0m:    2024-12-09 18:30:00 | Traceback (most recent call last):
+  File "/home/indianajones/.local/lib/python3.10/site-packages/starlette/routing.py", line 700, in lifespan
+    await receive()
+  File "/usr/lib/python3/dist-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/lib/python3.10/asyncio/queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[31mERROR[0m:    2024-12-09 18:30:40 | Error loading model: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+Traceback (most recent call last):
+  File "/home/indianajones/Documents/bangkit/tes-workflow/ml-service/app/core/models.py", line 12, in load_model
+    model = tf.keras.models.load_model(MODEL_URL)
+  File "/home/indianajones/.local/lib/python3.10/site-packages/keras/src/saving/saving_api.py", line 164, in load_model
+    is_keras_dir = file_utils.isdir(filepath) and file_utils.exists(
+  File "/home/indianajones/.local/lib/python3.10/site-packages/keras/src/utils/file_utils.py", line 471, in isdir
+    return os.path.isdir(path)
+  File "/usr/lib/python3.10/genericpath.py", line 42, in isdir
+    st = os.stat(s)
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+[31mERROR[0m:    2024-12-09 18:31:23 | Traceback (most recent call last):
+  File "/home/indianajones/.local/lib/python3.10/site-packages/starlette/routing.py", line 700, in lifespan
+    await receive()
+  File "/usr/lib/python3/dist-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/lib/python3.10/asyncio/queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[31mERROR[0m:    2024-12-09 18:31:33 | Error loading model: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+Traceback (most recent call last):
+  File "/home/indianajones/Documents/bangkit/tes-workflow/ml-service/app/core/models.py", line 12, in load_model
+    model = tf.keras.models.load_model(MODEL_URL)
+  File "/home/indianajones/.local/lib/python3.10/site-packages/keras/src/saving/saving_api.py", line 164, in load_model
+    is_keras_dir = file_utils.isdir(filepath) and file_utils.exists(
+  File "/home/indianajones/.local/lib/python3.10/site-packages/keras/src/utils/file_utils.py", line 471, in isdir
+    return os.path.isdir(path)
+  File "/usr/lib/python3.10/genericpath.py", line 42, in isdir
+    st = os.stat(s)
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+[31mERROR[0m:    2024-12-09 18:32:02 | Traceback (most recent call last):
+  File "/home/indianajones/.local/lib/python3.10/site-packages/starlette/routing.py", line 700, in lifespan
+    await receive()
+  File "/usr/lib/python3/dist-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/lib/python3.10/asyncio/queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[31mERROR[0m:    2024-12-09 18:32:34 | Error loading model: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+Traceback (most recent call last):
+  File "/home/indianajones/Documents/bangkit/tes-workflow/ml-service/app/core/models.py", line 12, in load_model
+    model = tf.keras.models.load_model(MODEL_URL)
+  File "/home/indianajones/.local/lib/python3.10/site-packages/keras/src/saving/saving_api.py", line 164, in load_model
+    is_keras_dir = file_utils.isdir(filepath) and file_utils.exists(
+  File "/home/indianajones/.local/lib/python3.10/site-packages/keras/src/utils/file_utils.py", line 471, in isdir
+    return os.path.isdir(path)
+  File "/usr/lib/python3.10/genericpath.py", line 42, in isdir
+    st = os.stat(s)
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+[31mERROR[0m:    2024-12-09 18:32:53 | Traceback (most recent call last):
+  File "/home/indianajones/.local/lib/python3.10/site-packages/starlette/routing.py", line 700, in lifespan
+    await receive()
+  File "/usr/lib/python3/dist-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/lib/python3.10/asyncio/queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[31mERROR[0m:    2024-12-09 19:14:24 | Traceback (most recent call last):
+  File "/home/indianajones/.local/lib/python3.10/site-packages/starlette/routing.py", line 700, in lifespan
+    await receive()
+  File "/usr/lib/python3/dist-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/lib/python3.10/asyncio/queues.py", line 159, in get
+    await getter
+asyncio.exceptions.CancelledError
+
