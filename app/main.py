@@ -23,7 +23,7 @@ async def lifespan(app: FastAPI):
 
     app.state.model_predict = model_predict
 
-    logger.info("Model stored in app stat")
+    logger.info("Model stored in app state")
     yield
 
     # task execute when shutdown
