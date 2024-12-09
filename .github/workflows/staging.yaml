@@ -58,7 +58,7 @@ jobs:
           --image=${{ vars.REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.ARTIFACT_REPO }}/${{ vars.SERVICE_NAME }}:${{ inputs.ref }} \
           --region=${{ vars.REGION }} \
           --project=${{ vars.GCP_PROJECT_ID }} \
-          --port= 8000 \
+          --port= ${{ vars.PORT }} \
           --cpu=2 \
           --memory=1Gi \
           --min-instances=1 \
