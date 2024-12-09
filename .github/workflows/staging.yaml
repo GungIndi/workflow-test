@@ -26,6 +26,7 @@ jobs:
         uses: 'google-github-actions/auth@v2'
         with:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+          token_format: 'access_token'
 
       - name: Echo secrets for debugging (masked values)
         run: |
