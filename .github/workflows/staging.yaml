@@ -23,6 +23,12 @@ jobs:
           token_format: 'access_token'
           workload_identity_provider: '${{ secrets.WIF_PROVIDER }}'
           service_account: '${{ secrets.WIF_SERVICE_ACCOUNT }}'
+          
+      - name: Echo secrets for debugging (masked values)
+        run: |
+          echo "WIF_PROVIDER: ${{ secrets.WIF_PROVIDER }}" # Will show a masked value, not the actual secret
+          echo "WIF_SERVICE_ACCOUNT: ${{ secrets.WIF_SERVICE_ACCOUNT }}" # Will show a masked value, not the actual secret
+
 
       - name: Docker Auth
         id: docker-auth
