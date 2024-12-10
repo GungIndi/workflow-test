@@ -41,7 +41,7 @@ async def predict_service(journal: JournalSchema, model) -> JournalSchema:
 
         logger.debug(emotion_data)
         if not emotion_data:
-            logger.warning("No emotions detected above threshold")
+            logger.warning("No emotions detected above thresholdd")
 
         # Update journal with results
         journal.emotionAnalysis = emotion_data
