@@ -89,7 +89,7 @@ jobs:
         with:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
           token_format: 'access_token'
-      - name: Deploy to Cloud Run
+      - name: Deploy to Cloud Runn
         id: deploy
         run: |
           gcloud run deploy ${{ vars.SERVICE_NAME }} \
@@ -98,7 +98,7 @@ jobs:
           --project=${{ vars.GCP_PROJECT_ID }} \
           --port=8000 \
           --cpu=2 \
-          --memory=1Gi \
+          --memory=1Gi \  
           --min-instances=1 \
           --max-instances=2 \
           --set-env-vars=ENVIRONMENT=production,PREDICT_MODEL_URL=${{ vars.PREDICT_MODEL_URL }},PROJECT_ID=${{ vars.GCP_PROJECT_ID }},TOPIC_ID=${{ vars.TOPIC_ID }},VERTEX_PROJECT_ID=${{ vars.VERTEX_PROJECT_ID }},GEN_MODEL_LOCATION=${{ vars.GEN_MODEL_LOCATION }},GEN_MODEL_ID=${{ vars.GEN_MODEL_ID }} \
