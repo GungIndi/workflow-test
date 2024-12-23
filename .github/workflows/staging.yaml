@@ -19,12 +19,12 @@ jobs:
       
       - name: Black Format Checking
         run: |
-          pip install black
+          pip3 install black
           black --check .
 
       - name: Bandit Security Check
         run: |
-          pip install bandit
+          pip3 install bandit
           bandit -r .
 
   # build-and-release:
