@@ -19,7 +19,7 @@ jobs:
       
       - name: Black Format Checking
         run: |
-          pip3 install black
+          apt install python3-black
           black --check .
 
       - name: Bandit Security Check
