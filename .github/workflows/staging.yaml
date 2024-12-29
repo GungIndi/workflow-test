@@ -17,14 +17,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11.2'
+      - name: Black Format Checking
+        run: |
+          pip3 install black
+          black --check .
 
       - name: Bandit Security Check
         run: |
-          sudo apt install python3-bandit
+          pip3 install bandit
           bandit -r .
 
   # build-and-release:
